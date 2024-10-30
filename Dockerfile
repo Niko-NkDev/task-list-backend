@@ -1,5 +1,5 @@
-# Usar una imagen base de OpenJDK con Maven
-FROM maven:3.9.0-openjdk-17-slim AS build
+# Usar una imagen base de Maven con OpenJDK
+FROM maven:3.9.0-openjdk-17 AS build
 
 # Establece el directorio de trabajo
 WORKDIR /app
@@ -9,7 +9,7 @@ COPY pom.xml .
 COPY src ./src
 
 # Compila la aplicación usando Maven
-RUN ./mvnw package -DskipTests
+RUN mvn clean package -DskipTests
 
 # Usar una imagen base de OpenJDK para la ejecución
 FROM openjdk:17-jdk-slim
