@@ -8,8 +8,8 @@ WORKDIR /app
 COPY pom.xml .
 COPY src ./src
 
-# Compila la aplicación usando Maven
-RUN mvn clean package -DskipTests
+# Compila la aplicación usando Maven con salida de depuración
+RUN mvn clean package -DskipTests -X
 
 # Usar una imagen base de OpenJDK para la ejecución
 FROM openjdk:17-jdk-slim
