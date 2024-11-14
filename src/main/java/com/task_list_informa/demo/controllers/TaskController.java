@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/tasks")
-@CrossOrigin(origins = {"http://localhost:3000", "https://task-list-frontend-83fc.onrender.com"}) // Permitir acceso desde React
+@CrossOrigin(origins = {"http://localhost:3000", "https://lista-tareas-informa-backend-latest.onrender.com"}) // Permitir acceso desde React
 public class TaskController {
     @Autowired
     private TaskService taskService;
